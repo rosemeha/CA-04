@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICST University - Transforming Education Globally</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --icst-blue: #003366;
+            --icst-gold: #FFD700;
+            --icst-light: #F8F9FA;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .navbar {
+            background: linear-gradient(90deg, #003366 80%, #FFD700 100%) !important;
+            box-shadow: 0 2px 16px #00336622;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80px;
+            position: relative;
+            animation: navbarFadeIn 1.2s cubic-bezier(.68,-0.55,.27,1.55) both;
+        }
+        .navbar .nav-link {
+            color: #FFD700 !important;
+            background: transparent;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            border-radius: 8px;
+            transition: background 0.2s, color 0.2s, transform 0.3s;
+            padding: 0.5rem 1.3rem;
+            font-size: 1.18rem;
+            margin: 0 0.5rem;
+            animation: menuItemFadeIn 1s cubic-bezier(.68,-0.55,.27,1.55);
+            box-shadow: 0 2px 8px #FFD70011;
+        }
+        .nav-custom-home { color: #FFD700 !important; }
+        .nav-custom-about { color: #43cea2 !important; }
+        .nav-custom-programs { color: #f7971e !important; }
+        .nav-custom-admissions { color: #6a82fb !important; }
+        .nav-custom-contact { color: #fc5c7d !important; }
+        }
+        .navbar .nav-link.active, .navbar .nav-link:hover {
+            background: #FFD700;
+            color: #003366 !important;
+            transform: scale(1.08);
+        }
+        .navbar .navbar-brand span {
+            text-shadow: 0 2px 8px #00336655;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-left: 0.5rem;
+        }
+        .navbar-brand img {
+            height: 54px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #FFD70055;
+            object-fit: cover;
+            animation: logoPopIn 1.1s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        
+        .hero-section {
+            background: url('C:/Users/jabir/OneDrive/Desktop/New folder (4)/DSC099861-480x554.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            min-height: 100vh;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+@keyframes heroFadeIn {
+  0% { opacity: 0; transform: translateY(60px) scale(0.97); }
+  80% { opacity: 1; transform: translateY(-8px) scale(1.03); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.hero-center-animate {
+  animation: heroFadeIn 1.2s cubic-bezier(.68,-0.55,.27,1.55) both;
+}
+.hero-btn-animate {
+  opacity: 0;
+  animation: heroFadeIn 1s 0.7s both;
+}
+        }
+        
+        .section-title {
+            color: var(--icst-blue);
+            position: relative;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--icst-gold);
+        }
+        
+        .program-card {
+            border: none;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .program-card .card-header {
+            background-color: var(--icst-blue);
+            color: white;
+            font-weight: bold;
+            border-radius: 10px 10px 0 0 !important;
+        }
+        
+        .campus-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .news-card {
+            height: 100%;
+        }
+        
+        footer {
+            background-color: var(--icst-blue);
+            color: white;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-icon:hover {
+            color: var(--icst-gold);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: var(--icst-blue);
+            color: white;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            z-index: 99;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--icst-gold);
+            color: var(--icst-blue);
+        }
+@keyframes navbarFadeIn {
+  0% { opacity: 0; transform: translateY(-40px) scale(0.98); }
+  80% { opacity: 1; transform: translateY(8px) scale(1.03); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes logoPopIn {
+  0% { opacity: 0; transform: scale(0.7) rotate(-10deg); }
+  80% { opacity: 1; transform: scale(1.08) rotate(2deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0); }
+}
+@keyframes menuItemFadeIn {
+  0% { opacity: 0; transform: translateY(-30px) scale(0.95); }
+  80% { opacity: 1; transform: translateY(6px) scale(1.05); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid d-flex flex-row align-items-center justify-content-center p-0" style="min-height:90px;">
+        <a class="navbar-brand d-flex align-items-center gap-3" href="#" style="animation:logoPopIn 1.1s cubic-bezier(.68,-0.55,.27,1.55);">
+          <img src="C:/Users/jabir/OneDrive/Desktop/New folder (4)/OIP (1).webp" alt="ICST University Logo" style="height:60px;width:auto;border-radius:10px;box-shadow:0 2px 8px #FFD70055;object-fit:cover;">
+          <span style="color:#FFD700;font-size:2.1rem;font-weight:900;letter-spacing:2px;text-shadow:0 2px 8px #00336655;">ICST University</span>
+        </a>
+        <ul class="navbar-nav flex-row gap-4" style="animation:navbarFadeIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);">
+          <li class="nav-item">
+            <a class="nav-link nav-custom-home" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-custom-about" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-custom-programs" href="#programs">Programs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-custom-admissions" href="#admissions">Admissions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-custom-contact" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <style>
+      .icst-topbar {
+        background: linear-gradient(90deg, #FFD700 0%, #003366 100%);
+        min-height: 38px;
+        width: 100vw;
+        z-index: 9999;
+        position: relative;
+        box-shadow: 0 2px 8px #00336622;
+      }
+      .animate-topbar-text {
+        animation: topbarTextFadeIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+      }
+      .topbar-item {
+        display: inline-block;
+        margin: 0 0.7rem;
+        opacity: 0;
+        animation: topbarItemPopIn 0.7s forwards;
+      }
+      .topbar-item:nth-child(1) { animation-delay: 0.1s; }
+      .topbar-item:nth-child(2) { animation-delay: 0.2s; }
+      .topbar-item:nth-child(3) { animation-delay: 0.3s; }
+      .topbar-item:nth-child(4) { animation-delay: 0.4s; }
+      .topbar-item:nth-child(5) { animation-delay: 0.5s; }
+      .topbar-item:nth-child(6) { animation-delay: 0.6s; }
+      .topbar-item:nth-child(7) { animation-delay: 0.7s; }
+      @keyframes topbarTextFadeIn {
+        0% { opacity: 0; transform: translateY(-20px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes topbarItemPopIn {
+        0% { opacity: 0; transform: translateY(-10px) scale(0.95); }
+        80% { opacity: 1; transform: translateY(4px) scale(1.05); }
+        100% { opacity: 1; transform: translateY(0) scale(1); }
+      }
+    </style>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-center">
+        <div class="container d-flex flex-column align-items-center justify-content-center" style="min-height:100vh;">
+            <h1 class="display-3 fw-bold mb-4 hero-center-animate" style="background:rgba(0,0,0,0.45);border-radius:18px;padding:0.7em 1.5em;">Welcome to ICST University</h1>
+            <p class="lead mb-5 hero-center-animate" style="background:rgba(0,0,0,0.35);border-radius:12px;padding:0.5em 1.2em;animation-delay:0.2s;">Transforming Education for Global Challenges</p>
+            <div class="d-flex justify-content-center gap-3 hero-btn-animate">
+                <a href="#programs" class="btn btn-primary btn-lg px-4">Explore Programs</a>
+                <a href="#admissions" class="btn btn-outline-light btn-lg px-4">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Chairman Section -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-lg-4 text-center mb-4 mb-lg-0">
+            <div class="chairman-img-wrap">
+              <img src="C:/Users/jabir/OneDrive/Desktop/New folder (4)/WhatsApp Image 2025-07-02 at 20.06.56_a602f587.jpg" alt="Chairman" class="img-fluid rounded-circle chairman-img">
+            </div>
+            <div class="chairman-boxes">
+              <div class="chairman-box chairman-title">Message from the</div>
+              <div class="chairman-box chairman-name">Chairman</div>
+              <div class="chairman-box chairman-person">Eng. M.H.A HIRAS</div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="chairman-message p-4 p-lg-5">
+              <div class="chairman-message-box">
+                <h3 class="mb-4 text-primary fw-bold">A warm welcome to ICST: a beacon of learning and innovation</h3>
+                <p class="lead mb-3">It is with immense pleasure that I extend a warm welcome to every one of you as the Chairman of our newly built ICST University Park. With the guidance of our Founder at ICST, a remarkable journey began, marked by a shared dedication to shaping the future through higher education.</p>
+              </div>
+              <div class="chairman-message-box">
+                <p class="mb-3">Our state-of-the-art campus represents more than just physical space; it embodies our mission to cultivate an environment that nurtures intellect, encourages creativity, and instills enduring values. Our vision is to establish a hub of academic distinction, innovation, and inclusivity. We are steadfast in our commitment to ensuring that ICST serves as a source of inspiration, offering unwavering support to every student in unlocking their full potential.</p>
+              </div>
+              <div class="chairman-message-box">
+                <p class="mb-3">The esteemed faculty’s unwavering dedication to shaping the minds of future scholars, their passion for teaching, and their commitment to research serve as the driving forces propelling us toward the pinnacle of academic excellence we strive to attain. At the core of ICST lies our students, and collectively, it is our responsibility to furnish them not only with an education but an enriching experience that equips them for the challenges and opportunities that await them.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<style>
+.chairman-img-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #003366 60%, #FFD700 100%);
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 24px #00336633;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  animation: fadeInUp 1s 0.1s both;
+}
+.chairman-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 12px #FFD70044;
+  transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.3s;
+}
+.chairman-img-wrap:hover .chairman-img {
+  transform: scale(1.07) rotate(-3deg);
+  box-shadow: 0 8px 32px #FFD70066;
+}
+.chairman-title {
+  color: #003366;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.chairman-name {
+  color: #FFD700;
+  font-size: 2.1rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px #00336633;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+.chairman-person {
+  color: #003366;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.chairman-message {
+  background: linear-gradient(135deg, #f8f9fa 60%, #fffbe7 100%);
+  border-radius: 22px;
+  box-shadow: 0 8px 32px #FFD70022, 0 2px 8px #00336611;
+  animation: fadeInUp 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.chairman-message h3 {
+  color: #003366;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 1.2rem;
+}
+.chairman-message p {
+  color: #003366;
+  font-size: 1.08rem;
+  font-weight: 500;
+  line-height: 1.7;
+  margin-bottom: 1.1rem;
+}
+@media (max-width: 900px) {
+  .chairman-img-wrap {
+    width: 140px;
+    height: 140px;
+  }
+  .chairman-img {
+    width: 120px;
+    height: 120px;
+  }
+  .chairman-message {
+    padding: 1.2rem;
+  }
+}
+</style>
+<style>
+.chairman-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.chairman-box {
+  background: linear-gradient(90deg, #003366 60%, #FFD700 100%);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 0.5rem 1.2rem;
+  box-shadow: 0 2px 12px #00336622;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  animation: fadeInUp 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.chairman-box.chairman-name {
+  font-size: 1.5rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #FFD700 60%, #003366 100%);
+  color: #003366;
+  text-shadow: 0 2px 8px #FFD70033;
+}
+.chairman-box.chairman-person {
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #fffbe7 60%, #FFD700 100%);
+  color: #003366;
+  text-shadow: 0 2px 8px #FFD70033;
+}
+.chairman-message-box {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #FFD70022;
+  margin-bottom: 1.2rem;
+  padding: 1.2rem 1.5rem;
+  animation: fadeInUp 1s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.chairman-message-box h3 {
+  color: #003366;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 1.2rem;
+}
+.chairman-message-box p {
+  color: #003366;
+  font-size: 1.08rem;
+  font-weight: 500;
+  line-height: 1.7;
+  margin-bottom: 1.1rem;
+}
+</style>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center section-title program-animate">Academic Programs</h2>
+        <p class="text-center mb-5 program-animate2">ICST offers a wide range of programs across disciplines</p>
+        <div class="row g-4 justify-content-center">
+          <!-- Computing & IT -->
+          <div class="col-md-6 col-lg-4">
+            <div class="icst-program-box program-animate-box program-gradient1">
+              <div class="icst-program-title"><i class="fas fa-laptop-code me-2"></i>Computing & IT</div>
+              <ul class="icst-program-list">
+                <li>Bachelor of Science in IT (BSIT)</li>
+                <li>Bachelor of Applied IT (3-year)</li>
+                <li>Diploma in Software Engineering</li>
+                <li>MSc in Data Science</li>
+              </ul>
+              <div class="icst-program-footer">Total fee: Rs. 540,000 (Sri Lanka campus)</div>
+            </div>
+          </div>
+          <!-- Business & Management -->
+          <div class="col-md-6 col-lg-4">
+            <div class="icst-program-box program-animate-box program-gradient2">
+              <div class="icst-program-title"><i class="fas fa-briefcase me-2"></i>Business & Management</div>
+              <ul class="icst-program-list">
+                <li>BSBA (Marketing Management)</li>
+                <li>BSc in Accounting</li>
+                <li>MBA (Master of Business Admin)</li>
+                <li>Executive MBA</li>
+              </ul>
+              <div class="icst-program-footer">Scholarships available</div>
+            </div>
+          </div>
+          <!-- Engineering & Technology -->
+          <div class="col-md-6 col-lg-4">
+            <div class="icst-program-box program-animate-box program-gradient3">
+              <div class="icst-program-title"><i class="fas fa-cogs me-2"></i>Engineering & Technology</div>
+              <ul class="icst-program-list">
+                <li>Civil Engineering</li>
+                <li>Mechanical Engineering</li>
+                <li>Electrical Engineering</li>
+                <li>Computer Engineering</li>
+              </ul>
+              <div class="icst-program-footer">Modern labs available</div>
+            </div>
+          </div>
+          <!-- Health Sciences -->
+          <div class="col-md-6 col-lg-4">
+            <div class="icst-program-box program-animate-box program-gradient4">
+              <div class="icst-program-title"><i class="fas fa-heartbeat me-2"></i>Health Sciences</div>
+              <ul class="icst-program-list">
+                <li>BSc in Nursing</li>
+                <li>Public Health</li>
+                <li>Medical Laboratory Science</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Hospitality -->
+          <div class="col-md-6 col-lg-4">
+            <div class="icst-program-box program-animate-box program-gradient5">
+              <div class="icst-program-title"><i class="fas fa-hotel me-2"></i>Hospitality</div>
+              <ul class="icst-program-list">
+                <li>BSc in Hospitality Management</li>
+                <li>Hotel Management</li>
+                <li>Tourism Management</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Preparatory Studies -->
+          <div class="col-md-6 col-lg-4">
+            <div class="icst-program-box program-animate-box program-gradient6">
+              <div class="icst-program-title"><i class="fas fa-book-reader me-2"></i>Preparatory Studies</div>
+              <ul class="icst-program-list">
+                <li>English Language Program</li>
+                <li>Foundation Studies</li>
+                <li>Soft Skills Development</li>
+              </ul>
+              <div class="icst-program-footer">Flexible duration (3-12 months)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+    .icst-program-box {
+      background: rgba(255,255,255,0.95);
+      border-radius: 22px;
+      box-shadow: 0 8px 32px #00336622, 0 2px 8px #FFD70022;
+      border: 2.5px solid #FFD70033;
+      padding: 2.2rem 2.2rem 1.5rem 2.2rem;
+      margin-bottom: 1.5rem;
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      animation: programBoxPopIn 1.1s cubic-bezier(.68,-0.55,.27,1.55);
+      transition: transform 0.3s, box-shadow 0.3s;
+      overflow: hidden;
+    }
+    .icst-program-box:hover {
+      transform: translateY(-10px) scale(1.04);
+      box-shadow: 0 16px 48px #00336633, 0 4px 16px #FFD70022;
+      z-index: 2;
+    }
+    .icst-program-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #fff;
+      border-radius: 16px 16px 0 0;
+      padding: 0.7rem 1.2rem;
+      margin-bottom: 1.1rem;
+      letter-spacing: 1px;
+      width: 100%;
+      text-shadow: 0 2px 8px #00336655;
+      background: linear-gradient(90deg, #003366 60%, #0056b3 100%);
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .program-gradient1 .icst-program-title { background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%); }
+    .program-gradient2 .icst-program-title { background: linear-gradient(90deg, #f7971e 0%, #ffd200 100%); }
+    .program-gradient3 .icst-program-title { background: linear-gradient(90deg, #fc5c7d 0%, #6a82fb 100%); }
+    .program-gradient4 .icst-program-title { background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%); }
+    .program-gradient5 .icst-program-title { background: linear-gradient(90deg, #f7971e 0%, #f44369 100%); }
+    .program-gradient6 .icst-program-title { background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%); }
+    .icst-program-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 1.1rem;
+      width: 100%;
+    }
+    .icst-program-list li {
+      background: rgba(255,255,255,0.85);
+      border-radius: 10px;
+      margin-bottom: 0.6rem;
+      padding: 0.6rem 1.1rem;
+      color: #003366;
+      font-weight: 600;
+      font-size: 1.05rem;
+      box-shadow: 0 2px 8px #FFD70011;
+      position: relative;
+      transition: background 0.2s, color 0.2s;
+      display: flex;
+      align-items: center;
+    }
+    .icst-program-list li:before {
+      content: '\25A0';
+      color: #FFD700;
+      font-size: 1.1em;
+      margin-right: 0.7em;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+    }
+    .icst-program-list li:last-child {
+      margin-bottom: 0;
+    }
+    .icst-program-footer {
+      background: #fffbe7;
+      border-radius: 0 0 16px 16px;
+      font-size: 1.01rem;
+      color: #003366;
+      font-weight: 700;
+      text-align: left;
+      padding: 0.7rem 1.1rem 0.3rem 1.1rem;
+      margin-top: auto;
+      width: 100%;
+      box-shadow: 0 2px 8px #FFD70011;
+    }
+    .program-animate-box {
+      opacity: 0;
+      transform: translateY(40px) scale(0.97);
+      animation: programBoxPopIn 1s forwards;
+    }
+    .program-animate-box:nth-child(1) { animation-delay: 0.1s; }
+    .program-animate-box:nth-child(2) { animation-delay: 0.2s; }
+    .program-animate-box:nth-child(3) { animation-delay: 0.3s; }
+    .program-animate-box:nth-child(4) { animation-delay: 0.4s; }
+    .program-animate-box:nth-child(5) { animation-delay: 0.5s; }
+    .program-animate-box:nth-child(6) { animation-delay: 0.6s; }
+    @keyframes programBoxPopIn {
+      0% { opacity: 0; transform: scale(0.92) translateY(60px); }
+      80% { opacity: 1; transform: scale(1.03) translateY(-8px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    @media (max-width: 900px) {
+      .icst-program-box {
+        padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+        min-height: 0;
+      }
+    }
+    </style>
+</style>
+<style>
+.program-cards-modern {
+  animation: fadeInUp 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.program-modern-card {
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px #00336622, 0 2px 8px #FFD70022;
+  transition: transform 0.35s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.3s;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+  animation-duration: 1.2s;
+  animation-fill-mode: both;
+}
+.program-modern-card:hover {
+  transform: translateY(-12px) scale(1.045);
+  box-shadow: 0 16px 48px #00336633, 0 4px 16px #FFD70022;
+  z-index: 2;
+}
+.program-modern-card .card-header {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+  border-radius: 18px 18px 0 0 !important;
+  padding: 1rem 1.2rem;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #003366 60%, #0056b3 100%);
+  border: none;
+  text-shadow: 0 2px 8px #0008;
+}
+.program-modern-card.program-gradient1 .card-header { background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%); }
+.program-modern-card.program-gradient2 .card-header { background: linear-gradient(90deg, #f7971e 0%, #ffd200 100%); }
+.program-modern-card.program-gradient3 .card-header { background: linear-gradient(90deg, #fc5c7d 0%, #6a82fb 100%); }
+.program-modern-card.program-gradient4 .card-header { background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%); }
+.program-modern-card.program-gradient5 .card-header { background: linear-gradient(90deg, #f7971e 0%, #f44369 100%); }
+.program-modern-card.program-gradient6 .card-header { background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%); }
+.program-modern-card .card-body {
+  background: #f8f9fa;
+  padding: 1.5rem 1.2rem;
+}
+.program-modern-card .list-group-item {
+  background: transparent;
+  border: none;
+  color: #003366;
+  font-weight: 500;
+  font-size: 1.05rem;
+  padding-left: 0;
+  padding-right: 0;
+  transition: color 0.2s;
+}
+.program-modern-card .list-group-item:before {
+  content: '\2022';
+  color: #FFD700;
+  font-size: 1.2em;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+.program-modern-card .list-group-item:hover {
+  color: #0056b3;
+}
+.program-modern-card .card-footer {
+  background: #fffbe7;
+  border-top: none;
+  border-radius: 0 0 18px 18px !important;
+  font-size: 0.98rem;
+  color: #003366;
+  font-weight: 600;
+  text-align: center;
+}
+.program-animate {
+  animation: fadeInUp 1s 0.1s both;
+}
+.program-animate2 {
+  animation: fadeInUp 1s 0.2s both;
+}
+.program-fadein {
+  animation: programCardFadeIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes programCardFadeIn {
+  from { opacity: 0; transform: scale(0.96) translateY(40px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+</style>
+
+    <!-- Admissions Section -->
+    <section id="admissions" class="py-5">
+        <div class="container">
+            <h2 class="text-center section-title">Admissions</h2>
+            <div class="row align-items-stretch">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="admissions-box admissions-animate mb-4">
+                        <h3 class="admissions-title"><i class="fas fa-bullhorn me-2"></i>Admissions Open for 2025-2026</h3>
+                    </div>
+                    <div class="admissions-box admissions-animate mb-4" style="animation-delay:0.1s;">
+                        <h5 class="admissions-subtitle"><i class="fas fa-clipboard-list me-2"></i> Requirements</h5>
+                        <ul class="admissions-list">
+                            <li>Completed application form</li>
+                            <li>High school diploma or equivalent</li>
+                            <li>Transcripts of records</li>
+                            <li>Passport-sized photos</li>
+                            <li>English proficiency test (for international students)</li>
+                        </ul>
+                    </div>
+                    <div class="admissions-box admissions-animate mb-4" style="animation-delay:0.2s;">
+                        <h5 class="admissions-subtitle"><i class="fas fa-calendar-alt me-2"></i> Important Dates</h5>
+                        <ul class="admissions-list">
+                            <li>Application deadline: June 30, 2025</li>
+                            <li>Entrance exams: July 15-20, 2025</li>
+                            <li>Classes begin: September 1, 2025</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                  <div class="card shadow apply-form animated-apply-form extra-style-form">
+                    <div class="card-header text-center gradient-border">
+                      <h4 class="mb-0"><i class="fas fa-paper-plane me-2"></i>Apply Online</h4>
+                    </div>
+                    <div class="card-body">
+                      <form>
+                        <div class="mb-3 animated-input glass-input">
+                          <label class="form-label"><i class="fas fa-user me-2"></i>Full Name</label>
+                          <input type="text" class="form-control fancy-input" required placeholder="Enter your full name">
+                        </div>
+                        <div class="mb-3 animated-input glass-input" style="animation-delay:0.1s;">
+                          <label class="form-label"><i class="fas fa-envelope me-2"></i>Email</label>
+                          <input type="email" class="form-control fancy-input" required placeholder="your@email.com">
+                        </div>
+                        <div class="mb-3 animated-input glass-input" style="animation-delay:0.2s;">
+                          <label class="form-label"><i class="fas fa-phone me-2"></i>Phone</label>
+                          <input type="tel" class="form-control fancy-input" required placeholder="Phone number">
+                        </div>
+                        <div class="mb-3 animated-input glass-input" style="animation-delay:0.3s;">
+                          <label class="form-label"><i class="fas fa-graduation-cap me-2"></i>Program of Interest</label>
+                          <select class="form-select fancy-input" required>
+                            <option value="">Select a program</option>
+                            <option>BS in Information Technology</option>
+                            <option>BS in Business Administration</option>
+                            <option>BSc in Engineering</option>
+                            <option>BSc in Hospitality</option>
+                          </select>
+                        </div>
+                        <div class="mb-3 animated-input glass-input" style="animation-delay:0.4s;">
+                          <label class="form-label"><i class="fas fa-map-marker-alt me-2"></i>Preferred Campus</label>
+                          <select class="form-select fancy-input" required>
+                            <option value="">Select campus</option>
+                            <option>Sri Lanka (Main)</option>
+                            <option>Sudan (Khartoum)</option>
+                            <option>Philippines (Oriental Mindoro)</option>
+                            <option>India (Uttar Pradesh)</option>
+                          </select>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                          <button type="submit" class="btn btn-primary w-75 animated-submit-btn fancy-btn" style="animation-delay:0.5s;">
+                            <i class="fas fa-check-circle me-2"></i>Submit Application
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+</section>
+<style>
+.admissions-box {
+  background: linear-gradient(120deg, #fffbe7 60%, #FFD70022 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #FFD70022, 0 2px 8px #00336611;
+  padding: 1.5rem 1.7rem 1.2rem 1.7rem;
+  margin-bottom: 1.2rem;
+  border-left: 6px solid #FFD700;
+  border-top: 2.5px solid #FFD70033;
+  border-bottom: 2.5px solid #FFD70033;
+  position: relative;
+  animation: admissionsBoxFadeIn 1s cubic-bezier(.68,-0.55,.27,1.55) both;
+}
+.admissions-title {
+  color: #003366;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 0.7rem;
+  text-shadow: 0 2px 8px #FFD70022;
+}
+.admissions-subtitle {
+  color: #FFD700;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 8px #00336622;
+}
+.admissions-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.admissions-list li {
+  background: rgba(255,255,255,0.85);
+  border-radius: 10px;
+  margin-bottom: 0.6rem;
+  padding: 0.6rem 1.1rem;
+  color: #003366;
+  font-weight: 600;
+  font-size: 1.05rem;
+  box-shadow: 0 2px 8px #FFD70011;
+  position: relative;
+  transition: background 0.2s, color 0.2s;
+}
+.admissions-list li:before {
+  content: '\2713';
+  color: #FFD700;
+  font-size: 1.1em;
+  margin-right: 0.7em;
+  font-weight: bold;
+}
+.admissions-list li:last-child {
+  margin-bottom: 0;
+}
+.admissions-animate {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  animation: admissionsBoxFadeIn 0.8s forwards;
+}
+@keyframes admissionsBoxFadeIn {
+  0% { opacity: 0; transform: translateY(40px) scale(0.97); }
+  80% { opacity: 1; transform: translateY(-8px) scale(1.03); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.extra-style-form {
+  background: rgba(255,255,255,0.85);
+  border: 2.5px solid #FFD70033;
+  box-shadow: 0 12px 40px #00336633, 0 2px 8px #FFD70022;
+  position: relative;
+  overflow: visible;
+}
+.gradient-border {
+  border-bottom: 4px solid transparent;
+  border-image: linear-gradient(90deg, #FFD700 0%, #003366 100%);
+  border-image-slice: 1;
+  background: linear-gradient(90deg, #003366 60%, #FFD700 100%);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  border-radius: 18px 18px 0 0 !important;
+  box-shadow: 0 2px 12px #FFD70022;
+}
+.glass-input {
+  background: rgba(255,255,255,0.7);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #FFD70011;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid #FFD70033;
+  margin-bottom: 1.1rem;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+.glass-input:focus-within {
+  box-shadow: 0 4px 16px #FFD70033;
+  border: 1.5px solid #FFD700;
+}
+.fancy-input {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-weight: 600;
+  color: #003366;
+}
+.fancy-input:focus {
+  outline: none !important;
+  background: #fffbe7 !important;
+  color: #003366;
+}
+.fancy-btn {
+  background: linear-gradient(90deg, #FFD700 0%, #003366 100%);
+  color: #003366;
+  font-weight: 800;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 8px #FFD70022;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+.fancy-btn:hover {
+  background: linear-gradient(90deg, #003366 0%, #FFD700 100%);
+  color: #FFD700;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 16px #00336633;
+}
+.animated-apply-form {
+  animation: popInForm 1.1s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.animated-input {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  animation: fadeInUp 0.7s forwards;
+}
+.animated-input:nth-child(1) { animation-delay: 0.05s; }
+.animated-input:nth-child(2) { animation-delay: 0.15s; }
+.animated-input:nth-child(3) { animation-delay: 0.25s; }
+.animated-input:nth-child(4) { animation-delay: 0.35s; }
+.animated-input:nth-child(5) { animation-delay: 0.45s; }
+.animated-submit-btn {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  animation: fadeInUp 0.7s 0.55s forwards;
+}
+@keyframes popInForm {
+  0% { opacity: 0; transform: scale(0.92) translateY(60px); }
+  80% { opacity: 1; transform: scale(1.03) translateY(-8px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+</style>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campuses Section -->
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-white">
+      <div class="container">
+        <h2 class="text-center section-title contact-animate">Contact</h2>
+        <div class="row justify-content-center align-items-center">
+          <div class="col-lg-7 mb-4 mb-lg-0">
+            <div class="contact-card glass-contact-card contact-animate">
+              <div class="contact-info mb-4">
+                <h4 class="fw-bold mb-3" style="color:#003366;"><i class="fas fa-university me-2"></i>ICST, University Park</h4>
+                <p class="mb-2"><i class="fas fa-phone-alt me-2 text-primary"></i> <a href="tel:+94743444444" class="contact-link">+94 74 3444 444</a></p>
+                <p class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> <a href="mailto:admissions@icst.edu.lk" class="contact-link">admissions@icst.edu.lk</a></p>
+              </div>
+              <div class="contact-social mt-3">
+                <a href="https://facebook.com/" target="_blank" class="social-icon contact-social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/" target="_blank" class="social-icon contact-social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+    .glass-contact-card {
+      background: rgba(255,255,255,0.85);
+      border-radius: 22px;
+      box-shadow: 0 8px 32px #00336622, 0 2px 8px #FFD70022;
+      padding: 2.2rem 2.5rem 1.7rem 2.5rem;
+      border: 2.5px solid #FFD70033;
+      animation: contactCardFadeIn 1.1s cubic-bezier(.68,-0.55,.27,1.55);
+      text-align: center;
+      position: relative;
+    }
+    .contact-info h4 {
+      color: #003366;
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+    }
+    .contact-info p {
+      color: #003366;
+      font-size: 1.08rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.5px;
+    }
+    .contact-link {
+      color: #003366;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-weight: 600;
+    }
+    .contact-link:hover {
+      color: #FFD700;
+      text-decoration: underline;
+    }
+    .contact-social {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.2rem;
+    }
+    .contact-social-icon {
+      background: linear-gradient(135deg, #FFD700 60%, #003366 100%);
+      color: #fff !important;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 2px 12px #FFD70033;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+      border: 2px solid #FFD70033;
+    }
+    .contact-social-icon:hover {
+      background: linear-gradient(135deg, #003366 60%, #FFD700 100%);
+      color: #FFD700 !important;
+      transform: scale(1.08) rotate(-3deg);
+      box-shadow: 0 4px 16px #00336633;
+    }
+    .contact-animate {
+      opacity: 0;
+      transform: translateY(30px) scale(0.98);
+      animation: contactCardFadeIn 1s 0.1s forwards;
+    }
+    @keyframes contactCardFadeIn {
+      0% { opacity: 0; transform: translateY(40px) scale(0.97); }
+      80% { opacity: 1; transform: translateY(-8px) scale(1.03); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @media (max-width: 900px) {
+      .glass-contact-card {
+        padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+      }
+    }
+    </style>
